@@ -1,0 +1,19 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+    <h1>Список станций</h1>
+    {% if stations %}
+        {% for el in stations %}
+            <div class ='alert alert-warning mt-2'>
+                <h3>{{ el.title }}</h3>
+                <p>{{ el.station }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Не построили станций:(</p>
+    {% endif %}
+{% endblock %}
